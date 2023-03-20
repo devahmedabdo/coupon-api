@@ -8,7 +8,7 @@ const cors = require("cors");
 // connect database
 require("./db/mongoose");
 // to use my route in front
-app.use(cors());
+app.use(cors({ allowedHeaders: "*", origin: "*", methods: "GET,POST,DELETE" }));
 // parse automatic
 app.use(express.json());
 //

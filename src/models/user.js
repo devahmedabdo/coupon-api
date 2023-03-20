@@ -16,14 +16,13 @@ const userSchema = mongoose.Schema(
     },
     password: {
       type: String,
-      // required: true,
       trim: true,
     },
     phone: {
       type: String,
       required: true,
       trim: true,
-      // unique: true,
+      unique: true,
       validate(value) {
         if (!validator.isMobilePhone(value, ["ar-SA"])) {
           console.log(value);
@@ -49,7 +48,6 @@ const userSchema = mongoose.Schema(
     },
     coupon: {
       type: mongoose.Schema.Types.ObjectId,
-      // required: true,
       ref: "Coupon",
     },
     tokens: [

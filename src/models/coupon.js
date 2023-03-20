@@ -11,11 +11,6 @@ const couponSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    // owner: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   // required: true,
-    //   ref: "User",
-    // },
   },
   { timestamps: true }
 );
@@ -23,7 +18,6 @@ const couponSchema = mongoose.Schema(
 couponSchema.methods.toJSON = function () {
   const news = this;
   const newsObject = news.toObject();
-  // delete newsObject.puplisher;
   return newsObject;
 };
 couponSchema.virtual("user", {
